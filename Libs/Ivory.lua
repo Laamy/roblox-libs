@@ -1,13 +1,14 @@
 local Ivory = {}
 
+local Players = game:GetService("Players")
+local RunService = game:GetService("RunService")
+local Chat = function(msg: string)
+	printidentity()
+	Players:Chat(msg)
+end
+
 Ivory.MoveTo = function(partToMove: Part, posToMoveTo: Vector3)
 	printidentity()
-	local Players = game:GetService("Players")
-	local RunService = game:GetService("RunService")
-
-	local Chat = function(msg: string)
-		Players:Chat(msg)
-	end
 
 	local chra: Model = Players.LocalPlayer.Character
 
