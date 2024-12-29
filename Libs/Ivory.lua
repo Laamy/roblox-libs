@@ -57,7 +57,7 @@ Ivory.MoveTo = function(partToMove: Part, posToMoveTo: Vector3)
 	-- ivory drift offsets dynamically calculated
 	local offsetX = (partToMove.Size.X / 2) - (chra["Torso"].Size.X / 2)-- sdfgjjsdfghngfnddfgnj i give up.
 
-	root.CFrame = CFrame.new(posToMoveTo) * CFrame.new(-offsetX, 0.2, 0) -- floating point error still..
+	root.CFrame = CFrame.new(posToMoveTo) * CFrame.new(-offsetX, 0, 0) -- floating point error still..
 	local anchor = FakeAnchor(root)
 	anchor.Start()
 	task.wait(0.2) -- TODO: make this more dynamic
