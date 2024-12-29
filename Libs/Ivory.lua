@@ -1,12 +1,11 @@
 local Ivory = {}
 
 Ivory.MoveTo = function(partToMove: Part, posToMoveTo: Vector3)
-	local SecurePlayers = cloneref(game:GetService("Players")) :: Players -- securely access players service
 	local Players = game:GetService("Players")
 	local RunService = game:GetService("RunService")
 
 	local Chat = function(msg: string)
-		SecurePlayers:Chat(msg)
+		Players:Chat(msg)
 	end
 
 	local chra: Model = Players.LocalPlayer.Character
