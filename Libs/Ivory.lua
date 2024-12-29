@@ -1,6 +1,7 @@
 local Ivory = {}
 
 Ivory.MoveTo = function(partToMove: Part, posToMoveTo: Vector3)
+	printidentity()
 	local Players = game:GetService("Players")
 	local RunService = game:GetService("RunService")
 
