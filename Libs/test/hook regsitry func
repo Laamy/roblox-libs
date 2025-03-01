@@ -1,0 +1,30 @@
+local Debug: Debug = loadstring(game:HttpGet("https://raw.githubusercontent.com/Laamy/roblox-libs/refs/heads/main/Libs/Debug.luau"))()
+
+local function getcenv(name: string): {()->()}
+    local results = {}
+    for i,v in pairs(getreg()) do
+        if type(v) == "function" and islclosure(v) then
+            local info = debug.getinfo(v)
+            if info.short_src:sub(#info.short_src - #name + 1) == name then
+                table.insert(results, v)
+            end
+        end
+    end
+    return results
+end
+
+-- print all info about every getcenv("ViewmodelSystem")
+local cenvs = getcenv("ViewmodelSystem")
+
+for i,v in pairs(cenvs) do
+    local info = debug.getinfo(v)
+    if info.name == "Recoil" then
+        local originalFunction = v
+        local function hookedFunction(...)
+            
+        end
+        debug.setupvalue(v, 1, hookedFunction)
+        
+        print(v, info.name, info.numparams)
+    end
+end
