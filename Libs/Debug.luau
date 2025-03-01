@@ -17,4 +17,4 @@ function Debug.require(Module): Table
     return Debug.GetModule(require(Module))
 end
 
-return { Debug = Debug }
+return Debug
